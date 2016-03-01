@@ -177,7 +177,7 @@ func (b *Bucket) GatherStats(which string) map[string]GatheredStats {
 
 	// Gather the results
 	rv := map[string]GatheredStats{}
-	for range vsm.ServerList {
+	for _ range vsm.ServerList {
 		gs := <-ch
 		rv[gs.Server] = gs
 	}
